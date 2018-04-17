@@ -40,7 +40,8 @@ use one of the following parameters:
 --status-short      shows status in a short way (cuts currently played song name and artist)
 --play              plays the song
 --pause             pauses the song
---playpause         plays or pauses the song (toggles a state)
+--toggle            plays or pauses the song
+--stop              stops the song
 --next              plays the next song
 --prev              plays the previous song
 --volumeup          increases sound volume
