@@ -6,7 +6,7 @@ from subprocess import Popen, PIPE
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:],"h:v",["help","status", "status-short","play","pause",
-                                              "playpause","stop","next","prev","volumeup","volumedown", "version"])
+                                              "toggle","stop","next","prev","volumeup","volumedown", "version"])
     except getopt.GetoptError:
         show_help()
         sys.exit(2)
@@ -18,7 +18,7 @@ def main():
         elif opt == "--status-short":  show_current_song_short()
         elif opt == "--play":          perform_spotify_action("Play")
         elif opt == "--pause":         perform_spotify_action("Pause")
-        elif opt == "--playpause":     perform_spotify_action("PlayPause")
+        elif opt == "--toggle":        perform_spotify_action("PlayPause")
         elif opt == "--stop":          perform_spotify_action("Stop")
         elif opt == "--next":          perform_spotify_action("Next")
         elif opt == "--prev":          perform_spotify_action("Previous")
@@ -34,7 +34,7 @@ def show_help():
           '    --status-short\tshows status in a short way (cuts currently played song name and artist)\n' \
           '    --play\t\tplays the song\n' \
           '    --pause\t\tpauses the song\n' \
-          '    --playpause\t\tplays or pauses the song (toggles a state)\n' \
+          '    --toggle\t\tplays or pauses the song (toggles a state)\n' \
           '    --next\t\tplays the next song\n' \
           '    --prev\t\tplays the previous song\n' \
           '    --volumeup\t\tincreases sound volume\n' \
