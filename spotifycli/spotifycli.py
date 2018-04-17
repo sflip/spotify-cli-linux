@@ -6,7 +6,7 @@ from subprocess import Popen, PIPE
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:],"h:v",["help","status", "status-short","play","pause",
-                                              "playpause","next","prev","volumeup","volumedown", "version"])
+                                              "playpause","stop","next","prev","volumeup","volumedown", "version"])
     except getopt.GetoptError:
         show_help()
         sys.exit(2)
@@ -19,6 +19,7 @@ def main():
         elif opt == "--play":          perform_spotify_action("Play")
         elif opt == "--pause":         perform_spotify_action("Pause")
         elif opt == "--playpause":     perform_spotify_action("PlayPause")
+        elif opt == "--stop":          perform_spotify_action("Stop")
         elif opt == "--next":          perform_spotify_action("Next")
         elif opt == "--prev":          perform_spotify_action("Previous")
         elif opt == "--volumeup":      control_volume("+5%")
